@@ -7,7 +7,10 @@ Object.defineProperty(unicycle, 'multifunctionalMetod', {
     enumerable: false,
 
     get() {
-        let newObject = Object.defineProperties({}, Object.getOwnPropertyDescriptors(this));
+        let newObject = {};
+        for(let key in this) {
+            newObject[key] = this[key];
+        }
         return newObject;
     },
 
@@ -20,6 +23,8 @@ Object.defineProperty(unicycle, 'multifunctionalMetod', {
             }
     }
 });
+
+
 
 let clone = unicycle.multifunctionalMetod;
 
