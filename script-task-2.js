@@ -1,9 +1,9 @@
-let productCard = {
+let unicycle = {
     title: 'Inmotion v5f',
     price: 500,
 }
 
-Object.defineProperty(productCard, 'multifunctionalMetod', {
+Object.defineProperty(unicycle, 'multifunctionalMetod', {
     enumerable: false,
 
     get() {
@@ -21,9 +21,9 @@ Object.defineProperty(productCard, 'multifunctionalMetod', {
     }
 });
 
-let clone = productCard.multifunctionalMetod;
+let clone = unicycle.multifunctionalMetod;
 
-productCard.multifunctionalMetod = [{propertyName: 'title', propertyValue: 'Gotway Nikola'}, {propertyName: 'price', propertyValue: '1000'}];
+unicycle.multifunctionalMetod = [{propertyName: 'title', propertyValue: 'Gotway Nikola'}, {propertyName: 'price', propertyValue: '1000'}];
 
 console.log(clone);
-console.log(productCard);
+console.log(unicycle);
