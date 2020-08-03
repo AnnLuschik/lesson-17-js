@@ -1,34 +1,14 @@
 let unicycle = {
-    title: 'Inmotion v5f',
+    title: 'Inmotion',
     price: 500,
-}
-
-Object.defineProperty(unicycle, 'multifunctionalMetod', {
-    enumerable: false,
-
-    get() {
-        let newObject = {};
-        for(let key in this) {
-            newObject[key] = this[key];
-        }
-        return newObject;
-    },
-
-    set(array) {
-            for(let item of array) {
-                if(!item.propertyValue.match(/\W/g)) {
-                    item.propertyValue = +item.propertyValue;
-                }
-                this[item.propertyName] = item.propertyValue;
-            }
+    changeProperties: function ChangeProperties(title = unicycle.title, price = unicycle.price) {
+        this.title = title;
+        this.price = price;
     }
-});
+};
 
+let myUnicycle = new unicycle.changeProperties();
+console.log(myUnicycle);
 
-
-let clone = unicycle.multifunctionalMetod;
-
-unicycle.multifunctionalMetod = [{propertyName: 'title', propertyValue: 'Gotway Nikola'}, {propertyName: 'price', propertyValue: '1000'}];
-
-console.log(clone);
+unicycle.changeProperties('Ninebot', 1000);
 console.log(unicycle);
